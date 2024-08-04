@@ -8,12 +8,17 @@ import pandas as pd
 import numpy as np
 import time
 import logging
+from dotenv import load_dotenv
+import os
 
-# Replace these with your actual API ID, API Hash, and phone number
-api_id = '21508194'
-api_hash = 'd5779f0170e80a64dd902bfad2751cf1'
-phone_number = '+919488223505'
-channel_id = -1002235691978  # Replace with your channel ID
+
+load_dotenv() 
+
+
+api_id = os.getenv('api_id')
+api_hash = os.getenv('api_hash')
+phone_number = os.getenv('phone_number')
+channel_id = os.getenv('channel_id')  # Replace with your channel ID
 
 def convert_to_unix_time(dt):
     return int(dt.timestamp())
